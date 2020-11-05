@@ -4,6 +4,7 @@ use getopts::Options;
 use rusoto_core::Region;
 use rusoto_ssm::{GetParameterRequest, GetParameterResult, Parameter, Ssm, SsmClient};
 use std::env;
+use std::process;
 use std::str::FromStr;
 use std::string::String;
 
@@ -37,7 +38,13 @@ async fn main() {
             parameter: Some(Parameter { value: Some(v), .. }),
             ..
         }) => println!("{}", v),
-        Ok(v) => println!("{:?}", v),
-        Err(e) => println!("{:?}", e),
+        Ok(v) => {
+            eprintln!("{:?}", v);
+            process::exit(1);
+        }
+        Err(e) => {
+            eprintln!("{:?}", e);
+            process::exit(1);
+        }
     }
 }
