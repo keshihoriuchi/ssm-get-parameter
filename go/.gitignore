@@ -1,1 +1,3 @@
 *.exe
+ssm-get-parameter
+ssm-get-parameter-alpine
