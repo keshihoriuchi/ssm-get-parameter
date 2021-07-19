@@ -8,6 +8,6 @@ edition = "2018"
 
 [dependencies]
 getopts = "0.2"
-rusoto_core = "0.45.0"
-rusoto_ssm = "0.45.0"
-tokio = "0.2"
+rusoto_core = "0.47.0"
+rusoto_ssm = "0.47.0"
+tokio = "1.0"
